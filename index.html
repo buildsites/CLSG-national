@@ -1,25 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- all styles starts here -->
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet"
         href="C:\Users\Nelson\Documents\Web development\Udemy Project\bootstrap-5.2.0\bootstrap-5.2.0\dist\css\bootstrap.min.css">
-    
+    <style type="text/css">
+        .navbar .megamenu {
+            padding: 1rem;
+        }
+
+        /* ============ desktop view ============ */
+        @media all and (min-width: 992px) {
+
+            .navbar .has-megamenu {
+                position: static !important;
+            }
+
+            .navbar .megamenu {
+                left: 0;
+                right: 0;
+                width: 100%;
+                margin-top: 0;
+            }
+
+        }
+
+        /* ============ desktop view .end// ============ */
+
+
+        /* ============ mobile view ============ */
+        @media(max-width: 991px) {
+
+            .navbar.fixed-top .navbar-collapse,
+            .navbar.sticky-top .navbar-collapse {
+                overflow-y: auto;
+                max-height: 90vh;
+                margin-top: 10px;
+            }
+        }
+
+        /* ============ mobile view .end// ============ */
+    </style>
+
+
+    <!-- all styels end here  -->
+
+    <!-- javascript for navbar function starts -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            /////// Prevent closing from click inside dropdown
+            document.querySelectorAll('.dropdown-menu').forEach(function (element) {
+                element.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            })
+        });
+	// DOMContentLoaded  end
+    </script>
+    <!-- javascript ends -->
+
     <!-- fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Indie+Flower&family=Merriweather&family=Montez&family=Montserrat:wght@400;700&family=Open+Sans&family=Pacifico&family=Sacramento&family=Ubuntu:wght@700&display=swap"
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    
-    
+
+
+
     <!-- fonts awesome -->
     <script src="https://kit.fontawesome.com/8b55461bea.js" crossorigin="anonymous"></script>
     <!-- offline -->
@@ -27,112 +84,183 @@
         href="C:\Users\Nelson\Documents\Web development\Udemy Project\fontawesome-free-6.1.2-web\css\all.min.css">
     <script src="C:\Users\Nelson\Documents\Web development\Udemy Project\fontawesome-free-6.1.2-web\js\all.js"></script>
 </head>
+
 <body>
-   <header>
-  <nav class="navbar navbar-expand-sm navbar-dark navbar-custom">
-      <a class="navbar-brand" href="#">Navbar</a>
-       
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-              <li class="nav-item">
-                  <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle dropbtn" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">States</a>
-            
-                    <div class="dropdown-content" style="padding:15px;">
-                        
-                        <div class="table-responsive">
-                            <table class="table table-striped
-                            table-hover	
-                            table-borderless
-                            table-primary
-                            align-middle">
-                                <thead class="table-light">
-                                    <caption>Table Name</caption>
-                                    <tr>
-                                        <th>Column 1</th>
-                                        <th>Column 2</th>
-                                        <th>Column 3</th>
-                                        <th>Column 4</th>
-                                        <th>Column 5</th>
-                                        <th>Column 6</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody class="table-group-divider">
-                                        <tr class="table-primary" >
-                                            <td scope="row">Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                            <td scope="row">Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                        </tr>
-                                        <tr class="table-primary">
-                                            <td scope="row">Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                            <td scope="row">Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                        </tr>
-                                        <tr class="table-primary">
-                                            <td scope="row">Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                            <td scope="row">Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                        </tr>
-                                       
-                                    </tbody>
-                                    <tfoot>
-                                        
-                                    </tfoot>
-                            </table>
-                        </div>
-
-                    </div>
-                
-              </li>
-
-              
-              </div>
-          </ul>
-          <ul class="d-flex my-2 my-lg-0">
-            
-                <li class="custom-list"><a href="https://facebook.com/groups/2276916859139112/" class="anchor"><i
-                            class="fab fa-facebook"></i></a></li>
-                <li class=" custom-list"><a href="https://twitter.com/clsg_ibusa?t=b5fcpxR9apo37qlA0AL-bg&s=09" class="anchor"><i
-                            class="fab fa-twitter"></i></a></li>
-                <li class=" custom-list"><a href="https://instagram.com/clsg.ibusa?r=nametag" class="anchor"><i
-                            class="fab fa-instagram"></i></a></li>
-            <button class="btn btn-danger btn-large nav-button">Donate</button>
-           
-          </ul>
-      </div>
-  </nav>
-   </header> 
-
-
-   <main>
-    <div class="intro-container">
-
-    </div>
     
-    <div class="call-for-action">
-        <h2>Join the Movement</h2>
+   
+        <nav class="navbar navbar-expand-sm navbar-dark navbar-custom">
+            <a class="navbar-brand" href="#" style="font-weight:bold;">CLSG <img src="images/logo.png" style="width:40px;"> </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" aria-current="page">Home <span
+                                class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                <li class="nav-item dropdown has-megamenu">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> States </a>
+                    <div class="dropdown-menu megamenu custom-megamenu" role="menu" style="background-color:rgb(255, 255, 255, 0.6); color:red;">
+                        <div class="row g-3">
+                            <div class="col-lg-3 col-6">
+                                <div class="col-megamenu">
+                                    <h6 class="title">Title Menu One</h6>
+                                    <ul class="list-unstyled">
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                    </ul>
+                                </div> <!-- col-megamenu.// -->
+                            </div><!-- end col-3 -->
+                            <div class="col-lg-3 col-6">
+                                <div class="col-megamenu">
+                                    <h6 class="title">Title Menu Two</h6>
+                                    <ul class="list-unstyled">
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                    </ul>
+                                </div> <!-- col-megamenu.// -->
+                            </div><!-- end col-3 -->
+                            <div class="col-lg-3 col-6">
+                                <div class="col-megamenu">
+                                    <h6 class="title">Title Menu Three</h6>
+                                    <ul class="list-unstyled">
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                    </ul>
+                                </div> <!-- col-megamenu.// -->
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <div class="col-megamenu">
+                                    <h6 class="title">Title Menu Four</h6>
+                                    <ul class="list-unstyled">
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                        <li><a href="#" class="custom-menu">Custom Menu</a></li>
+                                    </ul>
+                                </div> <!-- col-megamenu.// -->
+                            </div><!-- end col-3 -->
+                        </div><!-- end row -->
+                    </div> <!-- dropdown-mega-menu.// -->
+                </li>
+                </ul>
+                
+                <ul class="d-flex my-2 my-lg-0">
+                
+                    <li class="custom-list"><a href="https://facebook.com/groups/2276916859139112/" class="anchor"><i
+                                class="fab fa-facebook"></i></a></li>
+                    <li class=" custom-list"><a href="https://twitter.com/clsg_ibusa?t=b5fcpxR9apo37qlA0AL-bg&s=09" class="anchor"><i
+                                class="fab fa-twitter"></i></a></li>
+                    <li class=" custom-list"><a href="https://instagram.com/clsg.ibusa?r=nametag" class="anchor"><i
+                                class="fab fa-instagram"></i></a></li>
+                    <button class="btn btn-danger btn-large nav-button">Donate</button>
+                
+                </ul>
+            </div>
+            </div>
+           
+            
+        </nav>
+        </div>
+        </nav>
+    
+        
+<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position:absolute;overflow:hidden;">
+    <path fill="#ff0000" fill-opacity="1"
+        d="M0,160L24,160C48,160,96,160,144,138.7C192,117,240,75,288,64C336,53,384,75,432,106.7C480,139,528,181,576,208C624,235,672,245,720,240C768,235,816,213,864,186.7C912,160,960,128,1008,133.3C1056,139,1104,181,1152,202.7C1200,224,1248,224,1296,197.3C1344,171,1392,117,1416,90.7L1440,64L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z">
+    </path>
+</svg> -->
+<!-- style="background-image:url('images/voters.jpg'); background-size:100%;" -->
+   
+<main>
+
+<div class="intro-container container-fluid"  >
+
+
+    <!-- slide in texts animation javascript -->
+    <script>
+        var $slider = document.getElementById('slider');
+            var $toggle = document.getElementById('toggle');
+
+            $toggle.addEventListener('click', function () {
+                var isOpen = $slider.classList.contains('slide-in');
+
+                $slider.setAttribute('class', isOpen ? 'slide-out' : 'slide-in');
+            });
+    </script>
+
+    
+    <div id="slider" class="slide-in" style="width:40%">
+       <h1 class="slide-in-heading">We are the <span style="color:#df1e1e; text-shadow:#ad2525 0 5px 7px;">structure</span>, Let your vote count today!!</h1>
+       
     </div>
+
+    <!-- peter frame -->
+<div class="peter-frame"><img src="images/peter.png"></div>
+    
+    <!-- TRANSPARENT CIRCLE DIVS -->
+    <div>
+    <div class="circle"></div>
+    <div class="circle2"></div>
+</div>
+
+   </div>
+
+        
+        <div class="call-for-action">
+            <h2>Join the Movement</h2>
+        </div>
+<div>
+        <h1>Who are we?</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit perspiciatis placeat sunt nisi, distinctio libero sapiente exercitationem neque eius cum?</p>
+
+        <h1>What do we do?</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit perspiciatis placeat sunt nisi, distinctio libero
+            sapiente exercitationem neque eius cum?</p>
+
+        </div>
+
+        <div>
+<h2>What can be recognized as credible leadership</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, recusandae? Deserunt quod nemo rem exercitationem, sit perferendis aliquid commodi vitae!</p>
+        </div>
+        <div>
+            <h2>Vote Peter Obi!</h2>
+        </div>
+        <div>
+            <h1>Meet our founding members and executives</h1>
+            
+        </div>
+
+        <hr>
+
+
    </main>
 
 
-   <footer></footer>
+    <footer>
+        <h1>Footer will show here</h1>
+    </footer>
 
 
 
@@ -143,20 +271,29 @@
 
 
 
-<script
-    src="C:\Users\Nelson\Documents\Web development\Udemy Project\bootstrap-5.2.0\bootstrap-5.2.0\dist\js\bootstrap.min.js">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-    crossorigin="anonymous"></script>
+    <script
+        src="C:\Users\Nelson\Documents\Web development\Udemy Project\bootstrap-5.2.0\bootstrap-5.2.0\dist\js\bootstrap.min.js">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
 
-<script src="index.js"></script>
+    <script src="index.js"></script>
+
+
+   
+
 </body>
+
 </html>
+
+
+
+

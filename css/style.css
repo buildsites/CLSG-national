@@ -20,47 +20,29 @@
 }
 
 .anchor:hover {
-    color: rgb(31, 168, 93);
+    color:red;
 }
 
 .nav-button{
     margin:0 10px;
 }
 
-.dropbtn {
-    border: none;
-    cursor: pointer;
-}
 
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
+.custom-menu{
+    color:black;
+    font-weight:bold;
     text-decoration: none;
-    display: block;
 }
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
+.custom-megamenu{
+    background-color:rgb(255, 255, 255, 0.6); color:red;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
-.dropdown:hover .dropbtn {
-    background-color: rgb(233, 70, 6, 0.3);
-}
+
+
+
+
 
 /************************ 
 | Intro container       |
@@ -69,10 +51,95 @@
 .intro-container{
     height:80vh;
     background-color:mediumseagreen;
+    background-image:url('images/voters.jpg');
+position:relative;
 }
 
+
 .call-for-action{
-    background-color:red;
+    background-color:#ff0000;
     color:white;
     text-align: center;
+}
+
+#slider {
+    position: absolute;
+    margin-top:50px;
+    color:white;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+
+.slide-in-heading{
+    font-size:3.5rem;
+    text-shadow:black 0 5px 7px;
+}
+
+.slide-in {
+    animation: slide-in 1.5s forwards;
+    -webkit-animation: slide-in 1.5s forwards;
+}
+
+.slide-out {
+    animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+    100% {
+        transform: translateX(10%);
+    }
+}
+
+@-webkit-keyframes slide-in {
+    100% {
+        -webkit-transform: translateX(10%);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes slide-out {
+    0% {
+        -webkit-transform: translateX(0%);
+    }
+
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+.peter-frame{
+position:absolute;
+right:0;
+bottom:0;
+}
+
+
+
+/* transparent circles */
+.circle, .circle2{
+    border-radius:50%;
+    background-color:#1b4d314f;
+    position:absolute;
+    height:200px;
+width:200px;
+}
+
+.circle{
+right:0;
+}
+
+.circle2{
+    bottom:0;
+    left:40%;
+    z-index:1;
 }
